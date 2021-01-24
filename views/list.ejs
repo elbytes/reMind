@@ -6,18 +6,25 @@
     <title>reMind</title>
 </head>
 <body>
-   <h1><%= day %></h1>
-   <ul>
-       <li>Buy Food</li>
-       <li>Cook Food</li>
-      
-       <% for(i=0; i<newListItems.length; i++){ %>
-           <li> <%= newListItems[i] %></li>
-       <%}%>
-   </ul>
-   <form action="/" method="POST">
-       <input type="text" name="newItem">
-       <button type="submit" name="button">Add</button>
+
+    <div class="box" id="heading">
+        <h1><%= day %></h1>
+    </div>
+   
+    <div class="box">
+            <% for(i=0; i<newListItems.length; i++){ %>
+                <div class="item">
+                    <input type="checkbox">
+                <p> <%= newListItems[i] %></p>
+           </div>
+           <%}%>
+            
+  
+  
+   <form class="item" action="/" method="POST">
+       <input placeholder="add new item" type="text" name="newItem" autocomplete="off">
+       <button type="submit" name="button">+</button>
    </form>
+</div>
 </body>
 </html>
