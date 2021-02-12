@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const date = require(__dirname + '/date.js');
 const mongoose = require('mongoose');
 const e = require('express');
-
+const _ = require('lodash');
 const app = new express();
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
@@ -78,14 +78,32 @@ app.post('/', (req, res)=>{
 //delete from list
 app.post('/delete', (req, res)=>{
     const itemId = req.body.checkbox;
-    Item.findByIdAndRemove(itemId, err=>{
-        if(err){
-            console.log(err);
-        }else{
-            console.log('successfully deleted');
-        }
-    });
-    res.redirect('/');
+    //get the list name
+    const listName = req.body.listName;
+
+    if(listName === day){
+        Item.findByIdAndRemove(itemId, err=>{
+            if(err){
+                console.log(err);
+            }else{
+                console.log('successfully deleted');
+            }
+        });
+        res.redirect('/');
+    }else{
+        //if the list is a custom list
+        //find the list and use $pull operator
+        //to access the items array (documents) in that list
+        //access the item we want to delete through the item's _id
+      List.findOneAndUpdate({name: listName},{$pull: {items: {_id: itemId}}},
+        (err, result)=>{
+            if(!err){
+                res.redirect('/' + listName);
+            }
+      })
+    }
+
+    
 });
 
 //custom lists
