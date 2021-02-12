@@ -12,14 +12,14 @@
     </div>
    
     <div class="box">
-            <% for(i=0; i<newListItems.length; i++){ %>
+        <% newListItems.forEach(item =>{ %>
+            <form action="/delete" method="POST">
                 <div class="item">
-                    <input type="checkbox">
-                <p> <%= newListItems[i] %></p>
-           </div>
-           <%}%>
-            
-  
+                    <input type="checkbox" name="checkbox" value="<%=item._id%>" onChange="this.form.submit()">
+                    <p> <%= item.name %></p>
+                </div>
+            </form>
+        <% }) %>
   
    <form class="item" action="/" method="POST">
        <input placeholder="add new item" type="text" name="newItem" autocomplete="off">
