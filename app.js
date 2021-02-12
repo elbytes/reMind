@@ -5,6 +5,7 @@ const date = require(__dirname + '/date.js');
 const mongoose = require('mongoose');
 const e = require('express');
 const _ = require('lodash');
+
 const app = new express();
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
@@ -108,7 +109,7 @@ app.post('/delete', (req, res)=>{
 
 //custom lists
 app.get('/:customList', (req, res)=>{
-    const listName = req.params.customList;
+    const listName = _.capitalize(req.params.customList);
     List.findOne({name: listName}, (err, result)=>{
          if(!err){
              if(result){
