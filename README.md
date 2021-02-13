@@ -6,11 +6,11 @@ The app uses route parameters for custom list and sustains items related to each
 To create a new list you can type the name of the list in the URL
 
 example: 
-"https://mighty-scrubland-75759.herokuapp.com//School"
+//mighty-scrubland-75759.herokuapp.com//School
 
 or
 
-"https://mighty-scrubland-75759.herokuapp.com//Work"
+mighty-scrubland-75759.herokuapp.com//Work
 
 
 Check out the deployed app: <a target="_blank" href="https://mighty-scrubland-75759.herokuapp.com/">reMind</a>
