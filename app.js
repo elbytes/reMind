@@ -13,8 +13,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
 
 const auth ={
-    username: 'el-admin',
-    password: '44268760mize'
+    username: '<>',
+    password: '<>'
 };
 mongoose.connect(`mongodb+srv://${auth.username}:${auth.password}@cluster0.eb2di.mongodb.net/todolistDB`, 
     {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
