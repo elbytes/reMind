@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const e = require('express');
 const _ = require('lodash');
 
+
 const app = new express();
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
@@ -20,6 +21,7 @@ mongoose.connect(`mongodb+srv://${auth.username}:${auth.password}@cluster0.eb2di
 //items schema
 const itemsSchema ={
     name: String
+
 };
 
 const Item = mongoose.model('item', itemsSchema);
@@ -134,8 +136,12 @@ app.get('/:customList', (req, res)=>{
      })
 });
 
-app.listen(3000, ()=>{
-    console.log('listening on 3000');
+let port = process.env.PORT;
+if(port == null || port == ''){
+    port = 3000;
+}
+app.listen(port, ()=>{
+    console.log('Server started successfully.');
 });
 
  
