@@ -6,11 +6,9 @@
     <title>reMind</title>
 </head>
 <body>
-
     <div class="box" id="heading">
         <h1><%= listTitle %></h1>
     </div>
-   
     <div class="box">
         <% newListItems.forEach(item =>{ %>
             <form action="/delete" method="POST">
@@ -21,10 +19,9 @@
                 </div>
             </form>
         <% }) %>
-  
    <form class="item" action="/" method="POST">
        <input placeholder="add new item" type="text" name="newItem" autocomplete="off">
-       <button type="submit" name="list" value="<%= listTitle %>">+</button>
+       <button class="add-button" type="submit" name="list" value="<%= listTitle %>">+</button>
    </form>
 </div>
 </body>

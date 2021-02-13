@@ -11,7 +11,11 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
 
-mongoose.connect('mongodb://localhost:27017/todolistDB', 
+const auth ={
+    username: 'el-admin',
+    password: '44268760mize'
+};
+mongoose.connect(`mongodb+srv://${auth.username}:${auth.password}@cluster0.eb2di.mongodb.net/todolistDB`, 
     {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 //items schema
 const itemsSchema ={
