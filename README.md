@@ -6,7 +6,8 @@ The app uses route parameters for custom list and sustains items related to each
 To create a new list you can type the name of the list in the URL
 
 example: 
-//mighty-scrubland-75759.herokuapp.com//School
+
+mighty-scrubland-75759.herokuapp.com//School
 
 or
 
