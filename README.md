@@ -2,9 +2,14 @@
 A learner-obligatory todolist web app with Node.js (Express) using EJS and MongoDB Atlas 
 
 The app uses route parameters for custom list and sustains items related to each list.
+
 To create a new list you can type the name of the list in the URL
+
 example: "https://mighty-scrubland-75759.herokuapp.com//School"
+
 or
+
 "https://mighty-scrubland-75759.herokuapp.com//Work"
+
 
 deployed app: <a target="_blank" href="https://mighty-scrubland-75759.herokuapp.com/">reMind</a>
